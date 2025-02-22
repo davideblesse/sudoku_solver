@@ -1,0 +1,9 @@
+[submodule "client"]
+	path = client
+	url = git@github.com:davideblesse/sudoku-solver-client.git
+[submodule "server"]
+	path = server
+	url = git@github.com:davideblesse/sudoku-solver-server.git
+[submodule "auth"]
+	path = auth
+	url = git@github.com:davideblesse/sudoku_auth.git
