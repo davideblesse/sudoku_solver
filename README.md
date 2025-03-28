@@ -53,9 +53,9 @@ git submodule update --init --recursive
 
 ### 3. Dive Into Each Module
 
-- [`client/`](./client): The Flutter app – grab your phone and solve puzzles on the go.  
-- [`server/`](./server): The engine behind the scenes – OCR, preprocessing, and solving.  
-- [`auth/`](./auth): Handles users, logins, and tokens like a champ.
+- [`client/`](https://github.com/davideblesse/client): The Flutter app – grab your phone and solve puzzles on the go.  
+- [`server/`](https://github.com/davideblesse/server): The engine behind the scenes – OCR, preprocessing, and solving.  
+- [`auth/`](https://github.com/davideblesse/sudoku_auth): Handles users, logins, and tokens like a champ.
 
 Check each folder’s `README.md` for detailed instructions.
 
