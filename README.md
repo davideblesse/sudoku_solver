@@ -1,87 +1,81 @@
-# Sudoku Solver
+# 🔢 Sudoku Solver – One System to Solve Them All
 
-Welcome to **Sudoku Solver** – a complete, multi-module system for capturing, processing, and solving Sudoku puzzles. This repository ties together several key components:
+Welcome to the **Sudoku Solver** ecosystem – a smart, modular, and beautifully engineered system that takes you from snapping a photo of a Sudoku puzzle to getting the solution in seconds. This aggregator is your command center – the place where all the action comes together.
 
-- A **Flutter client** for capturing or selecting puzzle images.
-- A **FastAPI server** that processes images (using OpenCV and Tesseract OCR) and solves puzzles with a custom DFS algorithm.
-- A secure **Authentication service** using MongoDB Atlas and JWT (HS256).
-
-This repository serves as the central hub for the entire project, providing an overview, integration instructions, and links to the individual modules.
+Whether you're into mobile dev, backend APIs, authentication, or just want to flex your puzzle-solving brain, this project has something for you.
 
 ---
 
-## 🚀 What It Does
+## 🧠 What’s Inside?
 
-- **Capture & Process:**  
-  The mobile client allows you to capture or select a Sudoku puzzle image. The image is sent to the server where OpenCV preprocesses it and Tesseract OCR extracts the grid digits.
+The system is made up of **four modular components**, each designed to work together like pieces of a Sudoku grid:
 
-- **Solve:**  
-  The server then applies an efficient DFS algorithm (inspired by Peter Norvig’s approach) to compute the solution and returns it for display in the client app.
+- 📱 **Client (Flutter Mobile App):**  
+  Snap a pic or upload a puzzle. Our mobile app detects the grid, extracts the digits, and sends everything to the server with a slick UI.
 
-- **Secure Access:**  
-  The authentication module ensures that user registration and login are secure, managing sessions with JWT tokens.
+- ⚙️ **Server (FastAPI + OpenCV + Tesseract):**  
+  Receives the image, processes it, recognizes digits, solves the puzzle using a custom depth-first search (DFS) algorithm, and returns the result.
 
----
+- 🔐 **Auth (FastAPI + MongoDB + JWT):**  
+  Keeps everything secure. Users can register, log in, and get authenticated using industry-standard practices.
 
-## 🛠️ Modules Overview
-
-1. **[Client (Flutter)](https://github.com/davideblesse/sudoku-solver-client)**  
-   The mobile interface that lets users capture/upload puzzles and view the solved grid.
-
-2. **[Server (FastAPI)](https://github.com/davideblesse/sudoku-solver-server)**  
-   The backend service that handles image processing, OCR, and puzzle solving.
-
-3. **[Auth (MongoDB + JWT)](https://github.com/davideblesse/sudoku-auth)**  
-   The authentication service that securely registers and logs in users.
-
-Each module has its own detailed README. This central repository provides a top-level view and instructions for setting up and integrating all components.
+- 🧩 **Aggregator (This Repo):**  
+  The glue that binds it all. It links the other modules together and gives you the full picture of how the system works as a whole.
 
 ---
 
-## 📁 Repository Structure
+## 🧭 Architecture At a Glance
 
-Below is a high-level look at the structure of this repository:
+1. **User opens the app** → takes a photo of a puzzle  
+2. **Client** processes the image and sends it to the **Server**  
+3. **Server** extracts digits, solves the puzzle, sends back the solution  
+4. **Auth** keeps track of users and issues secure access tokens  
+5. Everyone’s happy 🎉
 
-```plaintext
-sudoku_solver/
-├── client/        # Flutter mobile client submodule
-├── server/        # FastAPI server submodule
-├── auth/          # Authentication service submodule
-└── README.md      # You are here!
-```
+---
 
 ## 🚀 Getting Started
 
-### 1. Clone This Repository with Submodules
+Want to see it all in action?
 
-It’s recommended to clone recursively to pull in the submodules simultaneously:
+### 1. Clone the Aggregator
 
 ```bash
-git clone --recursive https://github.com/davideblesse/sudoku_solver.git
-cd sudoku_solver
+git clone https://github.com/davideblesse/sudoku-solver.git
+cd sudoku-solver
 ```
 
-> **Note:** If you already cloned without --recursive, you can still pull submodules with:
->
+### 2. Initialize Submodules
+
 ```bash
 git submodule update --init --recursive
 ```
 
-### 2. Set Up Each Module
+### 3. Dive Into Each Module
 
-- **Client (Flutter):**  
-  Refer to the [Client README](client/README.md) for instructions on installing dependencies and running the Flutter app. You’ll need Flutter SDK, Dart, and an emulator/device.
+- [`client/`](./client): The Flutter app – grab your phone and solve puzzles on the go.  
+- [`server/`](./server): The engine behind the scenes – OCR, preprocessing, and solving.  
+- [`auth/`](./auth): Handles users, logins, and tokens like a champ.
 
-- **Server (FastAPI):**  
-  Check out the [Server README](server/README.md) for steps to install Python dependencies, run FastAPI locally, or build Docker containers.
+Check each folder’s `README.md` for detailed instructions.
 
-- **Auth (MongoDB + JWT):**  
-  See the [Auth README](auth/README.md) to configure environment variables (Mongo URI, JWT secret) and run the service.
+---
 
-### 3. Connect the Dots
+## 🤝 Contributing
 
-1. **Run the Auth Service** so that user registration and login are available.
-2. **Run the Server** to handle image OCR, Sudoku solving, and puzzle processing.
-3. **Run the Client** to capture or upload puzzle images, send them to the server, and show solutions.
+Got an idea? Found a bug? Want to build something wild on top of this?
 
-Optionally, you can containerize some or all services (Auth + Server) and run them alongside the client for a fully containerized setup.
+We welcome PRs, issues, and feature suggestions. Let’s build something awesome together.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Let’s be honest: you could solve Sudoku puzzles by hand...  
+But why do that when you can **build an AI-powered system that does it for you**?
+
+Happy hacking! 💻🧩🔥
